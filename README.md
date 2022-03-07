@@ -1,9 +1,9 @@
 # Welcome to the Capra Lab Manuscript Template!  
-This was created by the members of the [Capra Lab](http://www.capralab.org/) 2/2022 and finalized for LaTeX and MS Word by Evonne McArthur 3/2022.  
-  
+This was created by the members of the [Capra Lab](http://www.capralab.org/) 2/2022 and finalized for LaTeX and MS Word by Evonne McArthur 3/2022.
+
 The goal of these documents is to help make formatting and writing a manuscript easier and more standardized. Some of these suggestions are subjective and there is ultimately no one-size-fits-all for writing a paper. However, this will hopefully serve as a great place to start.  
 
-Feedback is welcome! LaTeX template [on overleaf is here](placeholder).  
+Feedback is welcome! The LaTeX template is [available on overleaf is here](placeholder).  
   
 ## Files
 - `CapraLabManuscriptTemplate.pdf`: An example of the compiled LaTeX Manuscript with tips for organizing and writing a manuscript  
@@ -23,11 +23,11 @@ Feedback is welcome! LaTeX template [on overleaf is here](placeholder).  
   - `6methods.tex`: Methods section  
   - `helperFunctions.tex`: You can put any helper functions here. It includes functions for formatting figures, tables, and captions.  
   - `library.bib`: example bibliography file  
-  - `REMOVEME_tips.tex`: Contains the text (light blue) for tips about each section, you can eventually delete this. See instructions below.  
+  - `REMOVEME_tips.tex`: Contains the text (gray-blue-purple text) for tips about each section, you can eventually delete this. See instructions below.  
   
 ## Using the MS Word Template  
 1. Download `CapraLabManuscriptTemplate.docx`.  
-2. Read through the tips for each section (light blue text) and then delete them.  
+2. Read through the tips for each section (gray-blue-purple text) and then delete them.  
 3. Fill in the template with your content.  
 4. For figures/tables, reference them using a descriptive "code name" (e.g. "genomeOverviewFig") so that if you rearrange figures, it is not a headache to renumber. At the VERY end, you can replace the code names with the figures in their final order.  
 5. For references, use a citation manager with Word plugin (e.g. Zotero, Mendeley)  
@@ -36,10 +36,10 @@ Feedback is welcome! LaTeX template [on overleaf is here](placeholder).  
   
 ## Using the LaTeX Template  
 1. Either download `latexTemplate/` and use a compiler locally or access the template [on overleaf here](placeholder).  
-2. Read through the tips for each section (light blue text) and then delete the lines that input these tips: **\input{REMOVEME_tips}** in `0main.tex`, **\titleTips**, **\abstractTips** in `1titlepage.tex`, **\introTips** in `2intro.tex`, **\resultsTips** in `3results.tex`, **\captionTips** in `4maintextFigs.tex`, **\discussionTips** in `5discussion.tex`, **\methodsTips**, **\methodsDataTips**, **\methodsAnalysisTips** in `6methods.tex` and **\generalTips** in `0suppl_text.tex`. Then you can delete the entire file for these tips: `REMOVEME_tips.tex`.  
+2. Read through the tips for each section (gray-blue-purple text) and then delete the lines that input these tips: **\input{REMOVEME_tips}** in `0main.tex`, **\titleTips**, **\abstractTips** in `1titlepage.tex`, **\introTips** in `2intro.tex`, **\resultsTips** in `3results.tex`, **\captionTips** in `4maintextFigs.tex`, **\discussionTips** in `5discussion.tex`, **\methodsTips**, **\methodsDataTips**, **\methodsAnalysisTips** in `6methods.tex` and **\generalTips** in `0suppl_text.tex`. Then you can delete the entire file for these tips: `REMOVEME_tips.tex`.  
 3. Fill in the template with your content in the relevant files.  
 4. For figures/tables, reference them using a descriptive "code name". Follow the directions in `4maintextFigs.tex` or below for how to create & reference the figures. This will take care of all the formatting and numbering. If you want to change the format of the figures/tables/captions, you can edit the corresponding functions in `helperFunctions.tex`.  
-5. For references, upload your custom `.bib` file from your reference manager. Overleaf has integration with certain systems for easier citations.  
+5. For references, upload a custom `.bib` file from your reference manager. Overleaf has integration with certain systems for easier citations.  
 6. Compile and export as a PDF. (For initial submission you just need the pdf, for final submission, you will submit the compiled documents as a zipped folder).  
 7. Publish!!  
   
@@ -72,13 +72,13 @@ There are multiple ways to cite in LaTeX; each has unique pros and cons. The cur
   
 To cite references parenthetically, use `~\citep{citationKey1, citationKey2}`. To cite references in-text use `~\citet{citationKey3}`.  
 
-#### Stylistic choices to consider that are options in the template
-Edit these in `0main.tex`
+#### Stylistic choices to consider
+These are all options that can be edited in `0main.tex`
 
 - Default LaTeX Serif font vs. Arial
 - Line numbers on vs. off
 - Line spacing (1.15 vs. 1 vs. 1.5 vs. 2)
-- Author-year or numeric in-text citations
+- Author-year vs. numeric in-text citations
 - Justified text vs. left-aligned (ragged right)
 - How figures are referenced (Figure vs. Fig, bold vs. normal)
   
