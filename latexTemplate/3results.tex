@@ -1,0 +1,29 @@
+\input{4maintextFigs}
+
+\section{Results}
+\resultsTips % Delete the tips
+\textbf{Optional paragraph 0} Concise overview of what the reader needs to know about the methods or context (but don’t take too long to get to the real results). \textit{The goal of this work is to demonstrate “X”}. If you use a lot of complicated or easily confused terminology, you can define it here to set the stage. 
+
+\subsection{Declarative result statement}
+\textbf{Context} Set up the context and logic for the experiment/analysis. Clearly state the question and hypothesis. Sometimes this will already have been set up by the previous section and can be skipped.
+
+\noindent\textbf{Approach} What was the experiment/analysis, briefly (cite methods section if needed)? Describe key factors of the approach, especially details that apply specifically to this result but not to others using the same method (i.e. specific simulation parameters that vary across results sections).
+
+\noindent\textbf{Result} Clearly state the MAIN result of the experiment/analysis and any relevant statistics. Give a quantification of the effect size, and if you performed a significance test, give the quantification of significance (e.g., p-value or q-value) and test used in parentheses. E.g., \textit{The mean expected 3D divergence is 78\% higher than the observed 3D divergence ($P = 1.8\times10^{-48}$, $t$-test)}. Reference relevant figure panels.
+
+\noindent\textbf{Details} Elaborate on any results that modulate or demonstrate the robustness of your main result. These usually reference supplemental figures that support your main result.
+
+\noindent\textbf{Conclusion} Conservative conclusions drawn from the result. What do these data say about your hypothesis? \textit{This suggests\dots} 
+
+\textbf{Example} \textit{Given X, we hypothesized that Tony is great. To evaluate/quantify Tony’s greatness, we did X. We found Y (big picture overview of result) (Main text figure reference). We controlled for Z. Tony’s greatness was robust even when considering W (Supplemental figure(s) reference). This suggests that Tony's greatness knows no bounds.}
+
+\subsection{Example results section to demonstrate figure references and placement}
+
+You should insert main text figures and tables into the document as soon as possible after the first mention in the text. We suggest you do this for initial submission even if the journal requests that you put your figures and captions at the end in a separate section. Your reviewers will thank you! Here is an example of how to reference a full figure in-text (\cref{fig:figureSuggestions}) or just a sub-panel (\cref{fig:figureSuggestions:A}). You might also want to reference two figures at the same time like this (\cref{fig:figureSuggestions,fig:tony}). Sometimes you might reference a range of figures like these pair of \textit{Capra} shown in \crefrange{fig:tony}{fig:cutegoat}. You can also reference a range of subpanels like \crefrange{fig:figureSuggestions:A}{fig:figureSuggestions:B}. You can do the same thing for tables (\cref{tab:sampleTable}).
+
+\figureSuggestions % How to put your "figureSuggestions" figure here after its first reference
+
+\subsection{Example results section to demonstrate references}
+Use \texttt{citep} to cite things parenthetically like this~\citep{Kent2002, einstein}. Or use \texttt{citet} to cite things in-text like this: \citet{Kent2002} did so many useful things!
+
+

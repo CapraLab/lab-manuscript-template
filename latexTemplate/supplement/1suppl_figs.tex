@@ -1,0 +1,23 @@
+\subsection*{Supplemental Figures}
+\setcounter{figure}{0} % set figs to start at 1
+\renewcommand{\thefigure}{S\arabic{figure}} % start figures with "S"
+
+% See 4maintextFigs.txt for functions and usage to help streamline making figures
+
+%%%% tony %%%%
+
+\generateFig{tony}{tony}{.3} 
+    {This is a picture of Tony Capra.} % bold caption
+    {Nobody puts Tony in a supplement\dots} % unbold caption
+\tony
+
+%%%% cutegoat %%%%
+% Example of sideways figure
+
+\generateFig[90]{cutegoat}{cutegoat}{.6} % Make angle 90deg
+    {This cute sideways goat wishes you good luck with your manuscript.} % bold caption
+    {This is how you rotate a figure but not the caption. To rotate the caption with the figure, use the function(s) \texttt{generateSidewaysFig} or \texttt{generateSidewaysFigSubpanels}.} % unbold caption
+\cutegoat
+
+\clearpage
+

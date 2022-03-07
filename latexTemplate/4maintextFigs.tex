@@ -1,0 +1,33 @@
+% Create a "code name" for each figure. In the maintext, when you want that figure to appear in the manuscript call that function (e.g. \figCodeName).
+
+%%%% Create and format Figure with subpanels: %%%%
+% \generateFigSubpanels[optionalRotationDegrees]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {main caption}
+%     {{
+%         {subcaption1},
+%         {subcaption2},
+%         {subcaption3}
+%     }}
+
+% Then in the reference your figures with \cref{fig:figCodeName} and Reference subpanels with \cref{fig:figCodeName:A}
+
+
+%%%% Function to create and format figures without subpanels %%%%
+
+% \generateFig[optionalRotationDegrees]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {Bold text main caption}
+%     {Smaller normal text caption}
+
+% Then in the main text reference your figures with \cref{fig:figCodeName}
+
+% You can also use \generateSidwaysFigSubpanels or \generateSidewaysFig to rotate the caption with the figure.
+
+%%%% Example figure with codename: figureSuggestions %%%%
+
+\generateFigSubpanels{figureSuggestions}{figureSuggestions}{1}
+    {Making good figures requires attention to detail.} % Main caption
+    {{
+        {General principals of making and labelling a good figure. These should help facilitate understanding and reproducibility. }, % Subcaption 1
+        {Some more detailed technical specifics about making figures and their sizes. Inkscape is a great free vector figure editor and alternative to Adobe Illustrator.\captionTips} % Subcaption 2
+    }}
+    

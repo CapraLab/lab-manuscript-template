@@ -1,0 +1,181 @@
+%%%% Delete this file to remove all the tips %%%%
+% Make sure you delete all the \[section]Tips in the main text files!!
+
+\newenvironment{tips} % To make the blue/gray-colored, small text environment to format the tips
+    {
+        \footnotesize\color{CadetBlue}
+        \begin{adjustwidth}{1cm}{1cm}
+        \begin{singlespace}
+        \vspace{.5em}
+        \nolinenumbers
+    }
+    {
+        \end{singlespace}
+        \end{adjustwidth}
+        \vspace{.5em}
+        %\ignorespacesafterend
+    }
+    
+
+    
+\newcommand{\titleTips}
+    {
+    \begin{tips}
+    \centering
+        State a result with the title if possible. Aim for fewer than 10 words.
+    \end{tips}
+    }
+    
+\newcommand{\abstractTips}
+    {
+    \begin{tips}
+        \noindent $<$ 250 words. Shorter is better. Check journal limits, structured or unstructured, and so on. \medskip
+        
+        \noindent Make a compelling elevator pitch for the paper that includes a brief intro, methods, results, conclusions. It can be split into sections or not. Always start with sections to provide a framework, but remove if needed. Revisit the abstract as you write the paper (even if you have written abstracts for conferences previously), because you will find better ways to summarize the paper as it evolves! 
+        
+        First sentence should make a broad and general statement that sets up to the importance of the topic. Avoid definitions in the first sentence. For example, don’t say \textit{TADs are 3D structures.} It is boring and does not convey importance or a gap. The first sentence can be the same as the first sentence of the Intro but often is more specific/less broad. Overall, it should establish the gap in knowledge as briefly as possible and avoid too much background. Put your main question/gap early (2\textsuperscript{nd} or 3\textsuperscript{rd} sentence). End the abstract by making the significance and implications for the field (and maybe next steps) clear. Be as broad as possible.  No citations and minimize explicit references to other work in the abstract (meta-discourse like \textit{Previous work that investigated X showed Y}); instead, just talk about Y and the gap that you will fill.
+    \end{tips}
+    }
+    
+\newcommand{\introTips}
+    {
+    \begin{tips}
+        $<$ 1 page, approx. 3 paragraphs \medskip
+
+        \noindent Begin by framing the broad field in which you are working very briefly. You do not need to provide a full review of this field. Strategically cite a few reviews. Just identify the main relevant work and cite review articles for those who need more context. Get to the critical gap/problem as quickly as possible. 
+        
+        Then elaborate on the specific problem that you are working on and explain why solving it is important (if you haven’t already). Presumably, other folks have also looked at this problem. Briefly review what they have found and/or the relevant hypotheses. Set up why there is a gap/problem (e.g., \textit{We need to test this new hypothesis, there are better machine learning methods, etc.}).
+        
+        Then explicitly detail what questions/hypotheses/etc you are trying to answer/test. Feel free to use a list. Describe your innovative approach---you may introduce such an approach in the paragraph(s) directly before this one. Note major predictions here and reemphasize the significance. Someone should be able to read only this paragraph and have a good sense of what the study/you/the team has tried to accomplish. (You can bullet point or list out the aims/problems/questions if you really want to draw attention to them).
+    \end{tips}
+    }
+
+\newcommand{\resultsTips}
+    {
+    \begin{tips}
+        As long as needed, but usually 4-7 subsections \medskip
+        
+        \noindent Divide this section into subsections with a logical progression from one analysis to another. The subsection titles should provide an outline of the results that enables skimming. Thus, try to make each results subsection title state a brief result. Do not feel constrained to follow the order in which you did the analyses. Tell the most logical and easy to follow story that highlights the most exciting parts of your findings early and ends with a finding that leads most towards future directions (or is a preliminary finding toward the new direction).  Make sure to reference and use all data presented in figures and tables. Negative results are useful. Actions should be written in past-tense, while statements/results are in the present-tense. E.g., (\textit{We TESTED the correlation of X vs. Y, and we OBSERVED that they ARE correlated}).
+        
+        Each results section should contain the following: context, approach, result, details, conclusion (see below for template). Repeat as needed. Depending on the relatedness of results, it is possible to have multiple of these ‘modules’ under a single heading. Conversely, you may have more headings than figures if, for example, multiple sections are needed to describe a multi-panel figure. (In this case, consider if the figure should be split up or not.)
+    \end{tips}
+    }
+    
+\newcommand{\captionTips}
+    {
+    \begin{tips}
+        \noindent Tips for captions and figures: All figures and tables should be inserted into the document as soon as possible after the first mention in the text. Make sure to number them sequentially as they are referenced in the text and provide a succinct descriptive caption. If there are multiple parts to a figure, give clear capital letter labels (A, B, C, etc.) to each panel. Make sure each figure and sub-figure are referenced somewhere in the text! The images should be saved in vector formats (such as PDF or EPS) to maintain high resolution. The exceptions to this are: 1) if you are including a photograph or 2) if you are plotting a file with thousands of overlapping individual data points that would each be represented in the vector file (use a bitmap format here). The title of the figure caption should state the overarching result. (This will often be similar to a results section title.) Captions should interpret the results briefly. The figures and captions should be able to be ``stand alone'' from the main text with enough context and methods for interpretation. (Many readers will only look at the figures and captions.) Subplots should contribute to one major overarching scientific point. If you can’t come up with one conclusion/title for a figure, consider if it should be two figures. If two figures show the same conclusion, one should probably go to the supplement (e.g., demonstrating that a results replicates across cell types or with a different control).
+
+    \end{tips}
+    }
+    
+\newcommand{\discussionTips}
+    {
+    \begin{tips}
+        Approx 1 page \medskip
+        
+        \noindent The discussion should be a broad overview of the significance of your findings to the community you are addressing. You can mirror the results section, but you don’t have to. You should start with a brief summary of the main findings and then a paragraph for the accompanying context and interpretation of each of the big picture conclusions or contributions. Then you should address high-level limitations of the study (not just small limitations that you might address in your results/methods) Finally, end with future directions on a positive note. How can people use your model/framework results? This positive-critical-positive is a compliment sandwich.
+
+        Everything discussed should be within the frame of reference of your paper’s major conclusions or contributions. You will likely want to address a shortlist of the key papers your paper speaks to, but this is not a literature review. Even if you don’t talk extensively about a paper, you can still cite it if it is relevant to your conclusions. (There is little cost to being free with your citations!) 
+        
+        Contrary to popular belief, you can bring up a new result in the discussion, especially if it is preliminary or a response to reviewer critiques. Save this for findings that are in service to the discussion, rather than just a main finding of a paper. You can also use sub-sections if it is helpful in framing but this is somewhat non-standard. 
+
+        Optional: Consider proposing a model or framework in your discussion that integrates or contextualizes your results. This can be accompanied by a schematic or ``model'' figure. This is a great way to emphasize the contribution of your study and guide future work.
+
+    \end{tips}
+    }
+    
+\newcommand{\methodsTips}
+    {
+    \begin{tips}
+        No length limit \medskip
+        
+        \noindent \underline{Goal}: Communicate the data and methods used to produce the results. Start writing this as you are doing your analyses. \underline{Objective}: (1) To write clearly how you produced all parts of the results and (2) promote reproducibility of the findings. \underline{Style}: Overall, the methods section should be clearly and thoroughly written. In theory, any knowledgeable reader (e.g., a graduate student working in your area) would be able to reproduce any of the findings just by reading your methods. \underline{Organization}: Write subsections with clear subheadings for each method. These should be descriptive. Ideally, subsections will be structured so that the reader can “look up” the details for any subsection of the results. \underline{Ordering subsections}: Subsection order should generally match the order of the results. However, if you repeat the same type of analyses in two separate parts of the paper, you can describe this once and refer to the sections those methods address. \underline{Voice}: Write in the active past tense (E.g. “We computed…, we intersected…, we quantified…”). \underline{Note on publicly available datasets}: Include a citation or url link to datasets used, along with the last download date. \underline{Citations}: if you use it, cite it. There is no ambiguity here.
+        
+        In some journals, the methods section precedes the results section, while in others it follows the Discussion section. If it comes before, then the text should provide some orientation and motivation. If it comes after, then it can be more of a list. Unless you know it will come first, write the methods section as if it were following the discussion section and then add orienting text later if necessary. 
+        
+        \underline{Other tips}: Think of the methods section is a cookbook, and each subsection is its own chapter. Some chapters will discuss where to get the finest ingredients, some will discuss specific cooking techniques, and the rest will discuss the recipes that combine ingredients and technique. For each recipe (subsection), you must be clear on which ingredients are needed and the order that the ingredients are assembled.
+        
+        You do not need to divulge every quotidian analytical detail (e.g., \textit{I first loaded .tsv into a data frame using pandas (v14.0) function pd.read\_csv(filename) and pivoted it into a table}). But you should provide every analytical detail relevant to reproducing the final data analyzed (e.g. \textit{We removed all loci mapping to sex chromosomes using the subtract function from BEDTools (v2.2.1; Quinlan and Hall 2010).})
+    \end{tips}
+    }
+    
+\newcommand{\methodsDataTips}
+    {
+    \begin{tips}
+        \begin{itemize}[noitemsep]
+            \item For publicly available data: Dataset name, genome build, url/citation, last-download date, sample size, etc.
+            \item For private data: Describe samples, sample collection, IRBs, names of kits and reagents used to process samples, sample size. 
+            \item Include any details about the dataset critical for analyses and generation of results (I.e. controls, selection criteria, covariates, ancestry, age, sex, status, cell type, tissue source, assay details). 
+            \item If applicable, explain how data were processed (i.e. excluded sex chromosomes, removed centromeric and repeat elements, etc.) 
+            \item Ask someone else in the lab to look over the draft to make sure you have not left out any essential details.
+        \end{itemize}
+    \end{tips}
+    }
+    
+\newcommand{\methodsAnalysisTips}{
+    \begin{tips}
+        \begin{itemize}[noitemsep]
+            \item State the data inputs. 
+            \item State your controls.  
+            \item State sample sizes.
+            \item State any software package, its version, and arguments used to run the analysis. 
+            \item Explain any processing steps, the order, and the rationale of those steps relevant for producing the result figure. 
+        \end{itemize}
+    \end{tips}
+    }
+    
+\newcommand{\generalTips}
+    {
+    \begin{tips}
+        \begin{itemize}[noitemsep]
+            \item Formatting/scientific corrections 
+                \begin{itemize}[noitemsep]
+                    \item The first time you report a p-value, give the test used. 
+                    \item Report p values as ($P = 0.\#$), be careful with ($P = 0$) (use $< \#$ when $P$ is very small)
+                    \item Change “mutation” to “variant”...maybe change “SNP” or “SNV” to “variant(s)” if specificity is not important (i.e., don’t forget that indels and CNVs/SVs are also types of genetic variants)
+                    \item For genomic coordinates/distances, the format is \# kb or \# Mb (space between number and unit, not \# Kb or \# mb)
+                    \item Use American spelling conventions.
+                \end{itemize}
+            \item Organization
+                \begin{itemize}[noitemsep]
+                    \item Put answers to the “why” question in the discussion
+                    \item Bring important findings to the first sentence of a paragraph/section
+                    \item With section headers, figure titles, and paper titles, try to state a result if possible (rather than a method, e.g. “Neanderthals were bald” rather than “Investigating hair patterns of Neanderthals”)
+                \end{itemize}
+            \item Wordsmithing
+                \begin{itemize}[noitemsep]
+                    \item Where you can avoid being vague, be specific:  instead of “establishes the relationship” say the relationship that was established. Instead of “Is incompletely understood” say what is the specific thing that is incompletely understood
+                    \item Get rid of “metadiscourse”. E.g., Change “Our findings XY and Z support previous findings, including studies by Smith et al  and Johnson et al, which reported that Neanderthals might have been bald at one point” to “XY and Z support findings that Neanderthals may have been bald (citation)”.
+                    \item Don’t claim you’re the first ever (or save that for the cover later)
+                    \item Generally speaking, avoid passive voice. If you can add “by zombies” after the verb and it still makes sense...rethink your phrasing
+                \end{itemize}
+            \item Word choice
+                \begin{itemize}[noitemsep]
+                    \item Change utilize to use 
+                    \item Change Impacted to influenced
+                    \item Delete uses of “those/these” in reference to previous sentence (make sure the subject of the sentence is clear)
+                    \item “Characterize” connotes that you don’t really have a hypothesis (try quantify?)
+                    \item Some favorite transition words: thus, nonetheless, furthermore, indeed, therefore
+                    \item Fewer (discrete quantities) vs less (continuous quantities)
+                    \item (e.g.,\dots) and (i.e.,\dots) can be helpful
+                    \item “Data” is the plural of “datum”.
+                    \item Avoid personifying inanimate objects (“the gene wants to...”)
+                    \item Splitting infinitives is ok.
+                    \item Contractions are not acceptable in academic writing.
+                    \item Remove: Interestingly, surprisingly
+                \end{itemize}
+            \item Punctuation
+                \begin{itemize}[noitemsep]
+                    \item Parenthetical punctuation: clauses and sentences
+                    \item Use an Oxford comma to separate the last and second-to-last elements in a list.
+                    \item Beware of consistency between Hyphens(-), n-dash(--), m-dash(---)
+                    \item With reporting intervals be consistent in how you use dashes and spaces (1-2 vs 1 - 2 vs 1 – 2, etc)
+                    \item Use a comma between independent clauses joined by a conjunction.
+                    \item Use "that" for restrictive clauses (no commas). Use "which" for non-restrictive clauses (use commas). 
+                    \item Pluralization rules for abbreviations.
+                \end{itemize}
+        \end{itemize}
+    \end{tips}
+    }
+    

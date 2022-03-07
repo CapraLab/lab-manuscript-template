@@ -1,0 +1,145 @@
+%%% ------------ OVERVIEW OF THIS TEMPLATE ------------ %%%
+% This is a Capra Lab Manuscript template! It was developed by the Capra
+% Lab and converted to a LaTex document by Evonne McArthur 2/2022 and last
+% edited 3/2022. 
+
+% To use this template, you should probably read the whole compiled document
+% because it contains lots of great tips. Once you are ready to go, you 
+% should delete the tips in each section (\abstractTips \introTips \resultsTips 
+% \captionTips \methodsTips \methodsDataTips, \methodsAnalysisTips \discussionTips and \generalTips). Then you should
+% delete the REMOVEME_tips.tex file and the call to that file in this document
+% (\input{REMOVEME_tips}). Then add your own content to the relevant subfiles.
+
+% Figures should be uploaded to the ./main_figs and ./supplement/suppl_figs
+% folders. Tables should be uploaded to ./supplement/suppl_tabs. When you work
+% with main text figures, you should create a "code name" for them. You will
+% follow the format in 4maintextFigs.tex to add a function that will generate
+% the figure. When you want that figure to appear in the manuscript call that
+% function (e.g. \codename).
+
+% Note that this document contains info about how to customize these things:
+% fontsize, font (to Arial), line spacing, line numbers, left vs. justified
+% aligned, number or author-date citations, natbib vs bibLaTeX citations,
+% sideways tables and figures, figure references and more!
+
+% See these resources for more LaTeX tips:
+%https://en.m.wikibooks.org/wiki/LaTeX
+%https://tobi.oetiker.ch/lshort/lshort.pdf
+%https://gangw.cs.illinois.edu/latex.pdf
+%https://web.mit.edu/rsi/www/pdfs/new-latex.pdf
+%http://hoffman.physics.harvard.edu/Hoffman-example-paper.pdf
+
+%%% ------------ READ IN PACKAGES & SETUP ------------ %%%
+
+% Basics, font size, page setup, link format, line spacing/numbering
+\documentclass[11pt]{article} % font size
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=1in]{geometry} % page setup, margins
+\usepackage{authblk} % author affiliations
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,breaklinks=true]{hyperref} % Hyperlinks, needed for biblatex, other option: allcolors=blue
+\usepackage{setspace} % for linespacing
+\usepackage{lineno} % line numbering (change with \linespacing below)
+\usepackage{csquotes} % Recommended for biblatex, must load after lineno or will get a warning
+\usepackage{ragged2e} % for left aligning
+\setlength{\RaggedRightParindent}{\parindent} % for paragraph indent with left aligning
+
+% Figure references and bolding them https://tex.stackexchange.com/questions/87903/bold-cross-references
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
+\crefdefaultlabelformat{#2\textbf{#1}#3} % To bold figure refs
+\Crefname{figure}{\textbf{Figure}}{\textbf{Figures}} % To bold figure refs
+\Crefname{section}{\textbf{Section}}{\textbf{Sections}} % To bold section refs
+\Crefname{table}{\textbf{Table}}{\textbf{Tables}} % To bold table refs
+\newcommand{\crefrangeconjunction}{--} % change conjunction b/w figures
+\newcommand{\crefpairconjunction}{, } % change conjunction b/w figures
+\newcommand{\creflastconjunction}{, } % change conjunction b/w figures
+\newcommand{\crefmiddleconjunction}{, } % change conjunction b/w figures
+
+% Figures, Tables and captions
+\usepackage{graphicx}
+\graphicspath{{./main_figs/}{./supplement/suppl_figs/}} % paths for figs
+\DeclareGraphicsExtensions{.pdf,.jpeg,.JPG,.png,.PNG, .eps, .tiff}
+\usepackage{subcaption} % for subcaptions (panels), and add parentheses
+\DeclareCaptionLabelFormat{bold}{\textbf{(#2)}} % bold subpanel letter in caption
+\captionsetup{subrefformat=bold} % bold subpanel letter in caption
+\renewcommand{\thesubfigure}{\Alph{subfigure}} % Make subpanel numbering capitalized
+\newcommand{\labelphantom}[1]{%  To make subpanel references easier from https://tex.stackexchange.com/a/255790/121424 
+  \parbox{0pt}{\phantomsubcaption\label{#1}}%
+}
+\usepackage{pgffor} % for function to make figures with subpanels
+\usepackage{alphalph} % for function to make figures with subpanels
+\usepackage[labelfont=bf, textfont=bf, singlelinecheck=off, textfont=footnotesize]{caption} % boldness of captions
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating}
+%\usepackage{tabularx}
+%\usepackage{makecell}
+
+% Read in helper functions
+\input{helperFunctions}
+
+% Change Fonts
+%\usepackage{fontspec} % To use arial font but you must change your compiler to XeLaTeX (upper left corner Menu > compilier) 
+%\setmainfont{Arial} % To use arial font but you must change your compiler to XeLaTeX (upper left corner Menu > compilier) 
+
+% Can remove, are for the tips
+\usepackage[dvipsnames]{xcolor} % can remove, for coloring the tips
+\usepackage{changepage} % can remove, for width on the tips
+\usepackage{enumitem} % can remove, for width on the tips
+
+
+%%% ------------ REFERENCES FORMAT ------------ %%% 
+% Note: Change the print bibliography command if switching between BibLaTex and Natbib
+% See this for a great comparison: https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib
+
+%% BibLaTeX format %% (newer/better but not all journals accept)
+% Numbered:
+%\usepackage[sorting=none, backend=biber, style=numeric-comp,maxbibnames=10,minbibnames=3, maxcitenames= 2,giveninits=true, natbib=true, url=false,hyperref=true]{biblatex}
+% Author Year:
+\usepackage[backend=biber,style=authoryear-comp,sorting=nyt,natbib=true, url=false]{biblatex}
+
+\addbibresource{library.bib} % add bibliography resource
+
+%% Natbib format %% (more basic)
+% Numbered:
+% \usepackage[square,numbers]{natbib}
+% \bibliographystyle{unsrtnat}
+% Author Year:
+%\usepackage{natbib}
+%\bibliographystyle{unsrtnat}
+
+
+%%% ------------ DOCUMENT ORGANIZATION ------------ %%%
+
+\input{1titlepage}
+\begin{document}
+
+    %\RaggedRight % If you want left-aligned (ie ragged right text) rather than justified
+    \setstretch{1.15} %\onehalfspace
+    \linenumbers
+    \input{REMOVEME_tips} % For the tips, eventually remove!
+    
+    \maketitle
+    \makeAbstract
+    \clearpage 
+    \input{2intro} 
+    \clearpage % can remove if you don't want a new page 
+    \input{3results} 
+    \clearpage % can remove if you don't want a new page
+    \input{5discussion}
+    \clearpage % can remove if you don't want a new page
+    \input{6methods}
+
+    \begin{singlespace}
+        \printbibliography % for biblatex
+        %\bibliography{library} % for natbib
+    \end{singlespace}
+    \clearpage
+
+    \section*{Supplementary Information}
+    \setcounter{page}{1} % Set page at 1
+    \input{supplement/0suppl_text}
+    \input{supplement/1suppl_figs}
+    \input{supplement/2suppl_tabs}
+
+\end{document}

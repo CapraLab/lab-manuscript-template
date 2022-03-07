@@ -1,0 +1,134 @@
+% Functions to create figures
+% \generateFigSubpanels: Figure with subpanels
+% \generateFig: Figure without subpanels
+% \generateSidewaysFigSubpanels: Sideways fig and caption with subpanels
+% \generateSidewaysFig: Sideways fig and caption without subpanels
+% \generateTab: Table
+% \generateSidewaysTab: Sideways table and caption
+
+%%%% Function to create and format figures with subpanels %%%%
+\newcommand{\generateFigSubpanels}[6][0]{% default rotation=0
+     \expandafter\newcommand\csname#2\endcsname{ %https://tex.stackexchange.com/questions/65780/macro-defining-macro/65781#65781
+      \begin{figure}[htbp]
+        \foreach [count=\i] \x in #6{%
+            \labelphantom{fig:#2:\AlphAlph{\i}}
+        }
+        \centering
+        \includegraphics[width=#4\linewidth,angle=#1]{#3}
+        \caption{\textbf{\normalsize #5}}\label{fig:#2}
+        \footnotesize
+        \justifying
+        \foreach [count=\i] \x in #6{%
+            \noindent\subref{fig:#2:\AlphAlph{\i}}~\x\space
+        }
+      \end{figure}
+    }
+}
+
+% USAGE:
+% \generateFigSubpanels[optionalRotationDegrees,default=0]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {main caption}
+%     {{
+%         {subcaption1},
+%         {subcaption2},
+%         {subcaption3}
+%     }}
+
+% Then in the reference your figures with \cref{fig:figCodeName}
+% Reference subpanels with \cref{fig:figCodeName:A}
+
+
+%%%% Function to create and format figures without subpanels %%%%
+\newcommand{\generateFig}[6][0]{%  default rotation=0
+     \expandafter\newcommand\csname#2\endcsname{ %https://tex.stackexchange.com/questions/65780/macro-defining-macro/65781#65781
+      \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=#4\linewidth,angle=#1]{#3}
+        \caption{\textbf{\normalsize #5}\label{fig:#2}
+        \footnotesize
+        \normalfont
+        #6
+        }
+        
+      \end{figure}
+    }
+}
+
+% USAGE:
+
+% \generateFig[optionalRotationDegrees,default=0]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {Bold text main caption}
+%     {Smaller normal text caption}
+
+% Then in the main text reference your figures with \cref{fig:figCodeName}
+
+% Versions to turn caption sideways
+
+% To turn caption and figure sideways
+\newcommand{\generateSidewaysFigSubpanels}[6][0]{% default rotation=0
+     \expandafter\newcommand\csname#2\endcsname{ %https://tex.stackexchange.com/questions/65780/macro-defining-macro/65781#65781
+      \begin{sidewaysfigure}[htbp]
+        \foreach [count=\i] \x in #6{%
+            \labelphantom{fig:#2:\AlphAlph{\i}}
+        }
+        \centering
+        \includegraphics[width=#4\linewidth,angle=#1]{#3}
+        \caption{\textbf{\normalsize #5}}\label{fig:#2}
+        \footnotesize
+        \justifying
+        \foreach [count=\i] \x in #6{%
+            \noindent\subref{fig:#2:\AlphAlph{\i}}~\x\space
+        }
+      \end{sidewaysfigure}
+    }
+}
+
+\newcommand{\generateSidewaysFig}[6][0]{%  default rotation=0
+     \expandafter\newcommand\csname#2\endcsname{ %https://tex.stackexchange.com/questions/65780/macro-defining-macro/65781#65781
+      \begin{sidewaysfigure}[htbp]
+        \centering
+        \includegraphics[width=#4\linewidth,angle=#1]{#3}
+        \caption{\textbf{\normalsize #5}\label{fig:#2}
+        \footnotesize
+        \normalfont
+        #6
+        }
+        
+      \end{sidewaysfigure}
+    }
+}
+
+%%%% Function to create and format Tables %%%%
+
+\newcommand{\generateTab}[6][]{%  Note that rotation does not work here
+     \expandafter\newcommand\csname#2\endcsname{ \begin{table}[ht]
+          \centering
+                \resizebox{#4\textwidth}{!}{
+                \input{#3}
+            }
+            \caption{\textbf{\normalsize #5}\label{tab:#2}
+            \footnotesize
+            \normalfont
+            #6
+            }
+            
+        \end{table}
+    }
+}
+
+% Sideways table
+\newcommand{\generateSidewaysTab}[6][]{%  Note that rotation does not work here
+     \expandafter\newcommand\csname#2\endcsname{ \begin{sidewaystable}[ht]
+          \centering
+                \resizebox{#4\textwidth}{!}{
+                \input{#3}
+            }
+            \caption{\textbf{\normalsize #5}\label{tab:#2}
+            \footnotesize
+            \normalfont
+            #6
+            }
+            
+        \end{sidewaystable}
+    }
+}

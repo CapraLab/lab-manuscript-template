@@ -1,0 +1,41 @@
+%%% TITLE, AUTHOR, AFFILIATIONS, ABSTRACT %%%
+
+%%% ------------ TITLE ------------ %%%
+
+\title{The Capra Lab manuscript template\titleTips}
+
+%%% ------------ AUTHORS ------------ %%%
+
+\author[1]{Your~Name~Here}
+\author[2,3,*]{John~A.~Capra}
+\affil[1]{Place, City, XX}
+\affil[2]{Bakar Computational Health Sciences Institute, University of California, San Francisco, CA}
+\affil[3]{Department of Epidemiology and Biostatistics, University of California, San Francisco, CA}
+
+\affil[ ]{ } % for some blank space
+\affil[*]{\textit{Correspondence to }\underline{tony@capralab.org}}
+\renewcommand\Affilfont{\footnotesize} % size of affilitations
+\setcounter{Maxaffil}{0} % no max for num affiliations
+\date{} % If you want a date fill this in (e.g. \date{February 2022})
+
+%%% ------------ ABSTRACT ------------ %%%
+
+\newcommand{\makeAbstract}{
+\begin{abstract}
+\abstractTips
+
+\paragraph{Background}
+\noindent (No more than three sentences.) Motivate your work by stating the problem you addressed or the hypothesis you tested. The last sentence should clearly state the gap in knowledge.
+
+\paragraph{Methods}
+(One or two optional sentences; this can be combined with results if it is not a methods focused paper. \textit{To address this gap, we applied X to Y.} or \textit{we synthesized V and W to reveal Z.}
+
+\paragraph{Results}
+(Most of the rest of the abstract) \textit{Here, we show\dots} What did you do and what did you find? This should summarize the main analyses and results of your work. Keep it high level; it is ok if some results are not mentioned.
+
+\paragraph{Conclusions}
+(No more than two sentences.) What did you learn from your studies? How does this change the field? What do your results say about the problem/hypothesis identified in the Background section?
+\end{abstract}
+
+}
+
