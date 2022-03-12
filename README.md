@@ -3,7 +3,7 @@ This was created by the members of the [Capra Lab](http://www.capralab.org/) 2/2
 
 The goal of these documents is to help make formatting and writing a manuscript easier and more standardized. Some of these suggestions are subjective and there is ultimately no one-size-fits-all for writing a paper. However, this will hopefully serve as a great place to start.  
 
-Feedback is welcome! The LaTeX template is [available on overleaf is here](placeholder).  
+Feedback is welcome! The LaTeX template is [available on overleaf is here](https://www.overleaf.com/latex/templates/capra-lab-manuscript-template/mrtmxhjdyzvz).  
   
 ## Files
 - `CapraLabManuscriptTemplate.pdf`: An example of the compiled LaTeX Manuscript with tips for organizing and writing a manuscript  
@@ -35,7 +35,7 @@ Feedback is welcome! The LaTeX template is [available on overleaf is here](place
 7. Publish!!  
   
 ## Using the LaTeX Template  
-1. Either download `latexTemplate/` and use a compiler locally or access the template [on overleaf here](placeholder).  
+1. Either download `latexTemplate/` and use a compiler locally or access the template [on overleaf here](https://www.overleaf.com/latex/templates/capra-lab-manuscript-template/mrtmxhjdyzvz).  
 2. Read through the tips for each section (gray-blue-purple text) and then delete the lines that input these tips: **\input{REMOVEME_tips}** in `0main.tex`, **\titleTips**, **\abstractTips** in `1titlepage.tex`, **\introTips** in `2intro.tex`, **\resultsTips** in `3results.tex`, **\captionTips** in `4maintextFigs.tex`, **\discussionTips** in `5discussion.tex`, **\methodsTips**, **\methodsDataTips**, **\methodsAnalysisTips** in `6methods.tex` and **\generalTips** in `0suppl_text.tex`. Then you can delete the entire file for these tips: `REMOVEME_tips.tex`.  
 3. Fill in the template with your content in the relevant files.  
 4. For figures/tables, reference them using a descriptive "code name". Follow the directions in `4maintextFigs.tex` or below for how to create & reference the figures. This will take care of all the formatting and numbering. If you want to change the format of the figures/tables/captions, you can edit the corresponding functions in `helperFunctions.tex`.  
@@ -45,7 +45,7 @@ Feedback is welcome! The LaTeX template is [available on overleaf is here](place
   
 ### Extra details on using the LaTeX templates  
 #### Creating figures, subfigures, and captions  
-There are 6 functions in `helperFunctions.tex` that may be used for formatting figures, subfigures, tables, and captions.  
+There are 6 functions in `helperFunctions.tex` that may be used for formatting figures, subfigures, tables, and captions. Note that, as the template is currently written, these all apply to "preassembled figures" where all panels (i.e. A, B, C) are included in one image or pdf file. 
   
 - `\generateFigSubpanels`: Figure with subpanels  
 - `\generateFig`: Figure without subpanels  
@@ -68,8 +68,8 @@ Figure referencing can be implemented with [cleveref](https://ctan.org/pkg/cleve
 - A range of figures can be referenced as: `\crefrange{fig:figureCodeNameOne}{fig:figureCodeNameTwo}`  
   
 #### Citations  
-There are multiple ways to cite in LaTeX; each has unique pros and cons. The current default in this document is using BibLaTeX to generate the bibliography (because of its flexibility) with the commands from natbib. That way, if a journal does not accept BibLaTeX, you can easily convert to natbib because the commands are already in place. See [details here](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib). In the preamble, there are instructions on how to use numeric citations or author-year citations.  
-  
+There are multiple ways to cite in LaTeX; each has unique pros and cons. The current default in this document is using BibLaTeX to generate the bibliography (because of its flexibility) with the commands from natbib. That way, if a journal does not accept BibLaTeX, you can easily convert to natbib because the commands are already in place. See [details here](https://tex.stackexchange.com/questions/25701/bibtex-vs-biber-and-biblatex-vs-natbib). In the preamble, there are instructions on how to use numeric citations or author-year citations. 
+
 To cite references parenthetically, use `~\citep{citationKey1, citationKey2}`. To cite references in-text use `~\citet{citationKey3}`.  
 
 #### Stylistic choices to consider
