@@ -1,5 +1,5 @@
 # Welcome to the Capra Lab Manuscript Template!  
-This was created by the members of the [Capra Lab](http://www.capralab.org/) 2/2022 and finalized for LaTeX and MS Word by Evonne McArthur 3/2022.
+This was created by the members of the [Capra Lab](http://www.capralab.org/) 2/2022 and finalized for LaTeX and MS Word by Evonne McArthur 3/2022. A LaTeX template formatted for Cell Press journals was added by Colin Brand 11/2023.
 
 The goal of these documents is to help make formatting and writing a manuscript easier and more standardized. Some of these suggestions are subjective and there is ultimately no one-size-fits-all for writing a paper. However, this will hopefully serve as a great place to start.  
 
@@ -41,7 +41,10 @@ Feedback is welcome! The LaTeX template is [available on overleaf is here](https
 4. For figures/tables, reference them using a descriptive "code name". Follow the directions in `4maintextFigs.tex` or below for how to create & reference the figures. This will take care of all the formatting and numbering. If you want to change the format of the figures/tables/captions, you can edit the corresponding functions in `helperFunctions.tex`.  
 5. For references, upload a custom `.bib` file from your reference manager. Overleaf has integration with certain systems for easier citations.  
 6. Compile and export as a PDF. (For initial submission you just need the pdf, for final submission, you will submit the compiled documents as a zipped folder).  
-7. Publish!!  
+7. Publish!!
+
+## Using the Cell Press journal format LaTeX Template
+Download ` Cell_Press_journal_format_latexTemplate/`, compile, and follow the instruction for the general use LaTeX template above.
   
 ### Extra details on using the LaTeX templates  
 #### Creating figures, subfigures, and captions  
