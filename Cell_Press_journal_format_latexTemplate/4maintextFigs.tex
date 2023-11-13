@@ -1,0 +1,32 @@
+% Create a "code name" for each figure. In the maintext, when you want that figure to appear in the manuscript call that function (e.g. \figCodeName).
+
+%%%% Create and format Figure with subpanels: %%%%
+% \generateFigSubpanels[optionalRotationDegrees]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {main caption}
+%     {{
+%         {subcaption1},
+%         {subcaption2},
+%         {subcaption3}
+%     }}
+
+% Then in the reference your figures with \cref{fig:figCodeName} and Reference subpanels with \cref{fig:figCodeName:A}
+
+
+%%%% Function to create and format figures without subpanels %%%%
+
+% \generateFig[optionalRotationDegrees]{figCodeName}{figureNamePath}{size:propOfTextwidth}
+%     {Bold text main caption}
+%     {Smaller normal text caption}
+
+% Then in the main text reference your figures with \cref{fig:figCodeName}
+
+% You can also use \generateSidwaysFigSubpanels or \generateSidewaysFig to rotate the caption with the figure.
+
+%%%% Example figure with codename: figureSuggestions %%%%
+
+\generateFigSubpanels{figureSuggestions}{figureSuggestions.pdf}{1}
+    {Figure title which should not end in a period} % Main caption
+    {{
+        {Succinct caption for Panel A. Note that figure captions will not split across pages.}, % Subcaption 1
+        {Caption for panel B. Add additional subpanel captions as needed depending on the figure.} % Subcaption 2
+    }}

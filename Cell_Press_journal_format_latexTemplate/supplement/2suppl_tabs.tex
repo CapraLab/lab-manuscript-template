@@ -1,0 +1,19 @@
+\subsection*{Supplemental Tables}
+\setcounter{table}{0} % set tables to start at 1
+\renewcommand{\thetable}{S\arabic{table}} % start tables with "S"
+
+%%%% sampleTable %%%%
+
+\generateTab{sampleTable}{supplement/suppl_tabs/sampleTable}{.55}
+    {\textbf{\color{sectioncolor}\normalsize Example table.}} % Main caption, note the manual formatting included here. While tedious, this is the easiest way to format supplemental table titles. Just include the code before the title text in any new tables.
+    {I use \texttt{Excel2LaTeX.xla} to create easy tables. There are also other online websites. Look for one that is booktabs enabled. Here's good advice about making simple readable tables: \url{https://users.umiacs.umd.edu/~jbg/images/tables.gif}} % Small caption
+\sampleTable
+
+% Example of how to make a sideways table
+% \generateSidewaysTab{sampleTableSideways}{supplement/suppl_tabs/sampleTable}{.3}
+%     {\textbf{\color{sectioncolor}\normalsize Sideways Table.}} % Main caption
+%     {Wow! This might be really useful for tables with lots of columns and fewer rows.} % Small caption
+% \sampleTableSideways
+
+
+\clearpage

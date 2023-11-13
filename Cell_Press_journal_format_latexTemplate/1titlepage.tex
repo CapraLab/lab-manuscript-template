@@ -1,0 +1,28 @@
+%%% TITLE, AUTHOR, AFFILIATIONS, ABSTRACT %%%
+
+%%% ------------ TITLE ------------ %%%
+
+\title{Capra Lab Manuscript Template for Cell Press Journals}
+
+%%% ------------ AUTHORS ------------ %%%
+
+\author[1,2]{Your Name}
+\author[4]{Additional Co-Author(s)}
+\author[1,2,3,5,*]{John~A.~Capra}
+\affil[1]{Bakar Computational Health Sciences Institute, University of California, San Francisco, CA, USA}
+\affil[2]{Department of Epidemiology and Biostatistics, University of California, San Francisco, CA, USA}
+\affil[3]{Biomedical Informatics Graduate Program, University of California San Francisco, San Francisco, CA, USA}
+\affil[4]{Additional Co-Author Department, University, City, State, USA}
+\affil[5]{Lead contact} % this should be the final affiliation so renumber as needed depending on the total number of affiliations
+\affil[*]{Correspondence: \href{mailto:tony@capralab.org}{tony@capralab.org}}
+\affil[ ]{ } % for some blank space
+\renewcommand\Affilfont{\footnotesize} % size of affilitations
+\setcounter{Maxaffil}{0} % no max for num affiliations
+\date{} % If you want a date fill this in (e.g. \date{February 2022})
+
+\newcommand{\makeAbstract}{
+\renewcommand{\abstractname}{\color{sectioncolor}SUMMARY}
+\begin{abstract}
+\noindent \color{linkcolor}Cell Press articles begin with a ``summary'' rather than an abstract. This should be 150 words or less. Per \textit{Cell Genomics}: ``An effective summary includes the following elements: (1) a brief background of the question that avoids statements about how a process is not well understood; (2) a description of the results and approaches/model systems framed in the context of their conceptual interest; and (3) an indication of the broader significance of the work. We discourage novelty claims (e.g., use of the word “novel”) because they are overused, tend not to add meaning, and are difficult to verify. Please do not include references in the summary.''
+\end{abstract}
+}

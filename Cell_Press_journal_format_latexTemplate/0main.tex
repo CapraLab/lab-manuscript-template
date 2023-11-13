@@ -1,0 +1,250 @@
+%%% ------------ OVERVIEW OF THIS TEMPLATE ------------ %%%
+% This is a Capra Lab Manuscript template! It was developed by the Capra
+% Lab and converted to a LaTex document by Evonne McArthur 2/2022 and last
+% edited 2/2022. 
+
+% To use this template, you should probably read the whole compiled document
+% because it contains lots of great tips. Once you are ready to go, you 
+% should delete the tips in each section (\abstractTips \introTips \resultsTips 
+% \captionTips \methodsTips \discussionTips and \generalTips). Then you should
+% delete the REMOVEME_tips.tex file and the call to that file in this document
+% (\input{REMOVEME_tips}). Then add your own content to the relevant subfiles.
+
+% Figures should be uploaded to the ./main_figs and ./supplement/suppl_figs
+% folders. Tables should be uploaded to ./supplement/suppl_tabs. When you work
+% with main text figures, you should create a "code name" for them. You will
+% follow the format in 4maintextFigs.tex to add a function that will generate
+% the figure. When you want that figure to appear in the manuscript call that
+% function (e.g. \codename).
+
+% Note that this document contains info about how to customize these things:
+% fontsize, font (to Arial), line spacing, line numbers, left vs. justified
+% aligned, number or author-date citations, natbib vs bibLaTeX citations,
+% sideways tables and figures, figure references and more!
+
+% See these resources for more LaTeX tips:
+%https://en.m.wikibooks.org/wiki/LaTeX
+%https://tobi.oetiker.ch/lshort/lshort.pdf
+%https://gangw.cs.illinois.edu/latex.pdf
+%https://web.mit.edu/rsi/www/pdfs/new-latex.pdf
+%http://hoffman.physics.harvard.edu/Hoffman-example-paper.pdf
+
+%%% ------------ READ IN PACKAGES & SETUP ------------ %%%
+
+% Basics, font size, page setup, link format, line spacing/numbering
+\documentclass[11pt]{article} % font size
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=1in]{geometry} % page setup
+\usepackage{authblk} % author affiliations
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue,breaklinks=true]{hyperref} % Hyperlinks, needed for biblatex, other option: allcolors=blue
+\setcounter{secnumdepth}{0} % disable section numbering, generates a few warnings but these should not effect the document
+\usepackage{setspace} % linespacing
+\usepackage{lineno} % line numbering
+\renewcommand\linenumberfont{\normalfont\scriptsize\fontspec{Arial}\color{black}}
+\usepackage{csquotes} % Recommended for biblatex, must load after lineno or will get a warning
+\usepackage{ragged2e}% for left aligning
+\setlength{\RaggedRightParindent}{\parindent} % for paragraph indent with left aligning
+\usepackage{array} % used to soft wrap text in Table S3
+
+% Write math as font
+\usepackage[no-math]{fontspec}
+\setmainfont{Arial}
+\usepackage[defaultmathsizes]{mathastext}
+\usepackage{amsmath}
+
+% Figure references and bolding them https://tex.stackexchange.com/questions/87903/bold-cross-references
+\usepackage[capitalise, noabbrev, nameinlink]{cleveref}
+\usepackage[labelsep=period]{caption} % change separator to period instead of colon
+\crefdefaultlabelformat{#2#1#3}
+\Crefname{figure}{Figure}{Figures}
+\Crefname{table}{Table}{Tables}
+\Crefname{section}{\textbf{Section}}{\textbf{Sections}}
+\newcommand{\crefrangeconjunction}{--} % change conjunction b/w figures
+\newcommand{\crefpairconjunction}{, }
+\newcommand{\creflastconjunction}{, }
+\newcommand{\crefmiddleconjunction}{, }
+
+% Figures, Tables and captions
+\usepackage{graphicx}
+\graphicspath{{./main_figs/}{./supplement/suppl_figs/}} % paths for figs
+\DeclareGraphicsExtensions{.pdf,.jpeg,.JPG,.png,.PNG, .eps, .tiff}
+\usepackage{subcaption} % for subcaptions (panels), and add parentheses
+\DeclareCaptionLabelFormat{bold}{{(#2)}} % bold subpanel letter in caption
+\captionsetup{subrefformat=bold} % bold subpanel letter in caption
+\renewcommand{\thesubfigure}{\Alph{subfigure}} % Make subpanel numbering capitalized
+\newcommand{\labelphantom}[1]{%  To make subpanel references easier from https://tex.stackexchange.com/a/255790/121424 
+  \parbox{0pt}{\phantomsubcaption\label{#1}}%
+}
+\usepackage{pgffor} % for function to make figures with subpanels
+\usepackage{alphalph} % for function to make figures with subpanels
+\usepackage[labelfont=bf, textfont=bf, singlelinecheck=off, textfont=footnotesize]{caption} % boldness of captions
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating}
+
+% Read in helper functions
+\input{helperFunctions}
+
+% Can remove, are for the tips
+\usepackage[dvipsnames]{xcolor} % can remove, for coloring the tips
+\usepackage{changepage} % can remove, for width on the tips
+\usepackage{enumitem} % can remove, for width on the tips
+
+ % soft wrap URLs and use same font as document
+\usepackage{xurl}
+\urlstyle{same}
+
+%%% ------------ REFERENCES FORMAT ------------ %%% 
+\usepackage[backend=biber, citestyle=numeric-comp, bibstyle=authoryear, sorting=none, natbib=true, url=false, minbibnames=10, maxbibnames=10, uniquename=false, uniquelist=false, giveninits=true]{biblatex}
+
+% add numbers to authoryear bibstyle in References
+\defbibenvironment{bibliography}
+  {\list
+    {\printtext[labelnumberwidth]{%
+       \printfield{labelprefix}%
+       \printfield{labelnumber}}}
+    {\setlength{\labelwidth}{\labelnumberwidth}%
+     \setlength{\leftmargin}{\labelwidth}%
+     \setlength{\labelsep}{\biblabelsep}%
+     \addtolength{\leftmargin}{\labelsep}%
+     \setlength{\itemsep}{\bibitemsep}%
+     \setlength{\parsep}{\bibparsep}}%
+     \renewcommand*{\makelabel}[1]{##1}}
+  {\endlist}
+  {\item}
+
+% add a period to each numbered reference
+\DeclareFieldFormat{labelnumberwidth}{#1.}
+
+% last names first
+\DeclareNameAlias{author}{family-given}
+
+% clear the month, issue number, and ISSN from references
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{number}}
+\AtEveryBibitem{\clearfield{issn}}
+
+% remove quotes from article title
+\DeclareFieldFormat[article]{title}{#1}
+
+% deitalicize journal title
+\DeclareFieldFormat{journaltitle}{#1\isdot}
+
+% axe "In:" before journal name
+\renewbibmacro{in:}{}
+
+% italicize volume number
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+}
+\DeclareFieldFormat[article]{volume}{\mkbibitalic{#1}}
+
+% format DOI
+\DeclareFieldFormat{doi}{\url{https://doi.org/#1}}
+
+% removes "pp" from pages
+\DefineBibliographyStrings{english}{%
+  page             = {},
+  pages            = {},
+} 
+
+% add a space between entries
+\setlength\bibitemsep{\baselineskip}
+
+% add bibliography resource
+\addbibresource{example.bib}
+
+%%% ------------ FONT COLOR FORMAT ------------ %%% 
+\usepackage{xcolor}
+\usepackage{caption}
+
+% Define a custom colors using the hexadecimal code
+\definecolor{sectioncolor}{HTML}{9c4847}
+\definecolor{black}{HTML}{000000}
+\definecolor{linkcolor}{HTML}{008ebe}
+
+% Set custom colors
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{sectioncolor}\normalfont\Large\bfseries}
+{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\color{sectioncolor}\normalfont\large\bfseries}
+{\thesubsection}{1em}{}
+
+% Redefine the figures title color
+\DeclareCaptionFont{figuretitlecolor}{\color{sectioncolor}}
+\DeclareCaptionFont{figurecaptioncolor}{\color{black}}
+\captionsetup[figure]{labelfont=bf, textfont=figurecaptioncolor, font=figuretitlecolor}
+
+% Redefine the tables title color
+\DeclareCaptionFont{tabletitlecolor}{\color{sectioncolor}}
+\DeclareCaptionFont{tablecaptioncolor}{\color{black}\footnotesize}
+\captionsetup[table]{labelfont=bf, textfont=tablecaptioncolor, font=tabletitlecolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=linkcolor
+}
+
+%%% ------------ TITLE PAGE FORMATTING ------------ %%% 
+
+% left align title, authors, and affiliations
+\makeatletter
+\renewcommand\maketitle{\par
+  \begingroup
+    \flushleft
+    \Large{\@title}\par
+  \endgroup
+  \vspace{0.5em}
+  \begin{flushleft}
+    \@author
+  \end{flushleft}
+}
+\makeatother
+
+% left align abstract title and justify abstract body
+\renewenvironment{abstract}{
+  \begin{flushleft}
+    \textbf{\abstractname}
+  \end{flushleft}
+  \vspace{-1.5em}
+  \par
+  \noindent\justify
+  \parfillskip=0pt
+}{
+  \par 
+}
+
+%%% ------------ DOCUMENT ORGANIZATION ------------ %%%
+
+\input{1titlepage}
+\begin{document}
+    \setstretch{1.15} %\onehalfspace
+    \linenumbers
+    \input{REMOVEME_tips}
+
+    \maketitle
+    \makeAbstract
+    \clearpage
+    \input{2intro} 
+    \input{3results}
+    \input{5discussion}
+    \input{6methods}
+
+    \begin{singlespace}
+        \printbibliography
+    \end{singlespace}
+    \clearpage
+    
+    %\section*{Supplementary Information}
+    \setcounter{page}{1} % Set page at 1
+    \input{supplement/0suppl_text}
+    \clearpage
+    \input{supplement/1suppl_figs}
+    \input{supplement/2suppl_tabs}
+
+\end{document}
